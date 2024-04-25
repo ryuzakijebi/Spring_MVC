@@ -17,8 +17,8 @@ public class DateController {
 
     @GetMapping(path = "/date")
     @ResponseBody
-    public void getDate(@RequestParam(name = "date") Date date,
-            HttpServletResponse response) throws IOException {
-        response.getWriter().println("Date : " + dateFormat.format(date));
+    public String getDate(@RequestParam(name = "date") Date date) throws IOException {
+        return "Date : " + dateFormat.format(date);
     }
 }
+
